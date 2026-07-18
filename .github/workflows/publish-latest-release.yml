@@ -23,9 +23,18 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      EVENT_NAME: ${{ github.event_name }}
+      BEFORE_SHA: ${{ github.event.before }}
+      AFTER_SHA: ${{ github.sha }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch
+          fetch-depth: 0
+
+      - name: Publish report releases
+        shell: bash
+        run: |
+          chmod +x .github/scripts/publish-report-releases.sh
+          .github/scripts/publish-report-releases.sh
