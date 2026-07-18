@@ -1,4 +1,4 @@
-name: Publish Latest Industry Report Release
+name: Publish Industry Report Releases
 
 on:
   push:
@@ -6,23 +6,26 @@ on:
       - main
     paths:
       - 'daily/**/*.md'
+      - 'weekly/**/*.md'
+      - 'monthly/**/*.md'
+  workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: publish-industry-report-releases-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   release:
-    name: Create or update daily release
+    name: Create or update report releases
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-
-      - name: Find latest daily report
-        id: report
-        shell: bash
-        run: |
-          REPORT=$(find daily -type f -name '*.md' | sort | tail -
+          fetch
