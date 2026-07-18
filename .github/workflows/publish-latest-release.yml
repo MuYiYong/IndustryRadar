@@ -1,0 +1,28 @@
+name: Publish Latest Industry Report Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'daily/**/*.md'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create or update daily release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find latest daily report
+        id: report
+        shell: bash
+        run: |
+          REPORT=$(find daily -type f -name '*.md' | sort | tail -
