@@ -8,6 +8,8 @@ on:
       - 'daily/**/*.md'
       - 'weekly/**/*.md'
       - 'monthly/**/*.md'
+      - '.github/workflows/publish-latest-release.yml'
+      - '.github/scripts/publish-report-releases.sh'
   workflow_dispatch:
 
 permissions:
