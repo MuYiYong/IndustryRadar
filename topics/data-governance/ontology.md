@@ -22,3 +22,23 @@ Agent 时代的企业本体不只描述客户、账户、合同、产品等业�
 ### 核心定位
 
 > 本体是企业 Agent 理解业务世界、判断约束并选择动作的机器可执行语义模型。
+
+## 2026-07-27｜W30 知识追加
+
+### 本体成为运行时政策层
+
+本周趋势进一步表明，本体的价值正在从统一术语和数据口径，扩展到定义可执行动作、前置条件、审批要求、证据义务和冲突处理策略。
+
+本体应能够明确：
+
+- 哪类主体可以对哪类业务对象执行哪些动作；
+- 哪些数据只允许在特定任务、地域、时间或风险等级下访问；
+- 哪些动作必须人工审批；
+- 哪些结论必须保留来源、路径和规则证据；
+- 规则冲突时应返回 permit、review 还是 deny。
+
+### 本体与 Context Graph 协同
+
+本体定义概念、状态、动作与规则；Context Graph 保存实例关系、当前状态、状态变化和影响路径。两者结合后，Agent 才能判断“发生了什么、影响谁、可以做什么以及为什么”。
+
+参考：[Context Graphs for Proactive Enterprise Agents](https://arxiv.org/abs/2607.07721)、[EDB Agentic Database](https://www.enterprisedb.com/press-releases/edb-launches-agentic-database-converged-analytics-and-governance-bringing-sovereign)
