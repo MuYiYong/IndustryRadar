@@ -21,3 +21,23 @@
 本体用于定义监管口径、业务对象、风险类型和控制规则；图数据库用于表达客户、账户、交易、模型、Agent、工具与规则之间的关系，并进行权限传播、风险传播、集中度和影响范围分析。
 
 参考：[AWS：Preparing for agentic AI in financial services](https://aws.amazon.com/blogs/security/preparing-for-agentic-ai-a-financial-services-approach/)
+
+## 2026-07-27｜W30 知识追加
+
+### 金融 Agent 的可信执行链
+
+金融行业的重点不是部署更多聊天机器人，而是确保每项机器行动都有明确主体、授权依据、数据版本、规则证据、审批状态和补偿机制。
+
+优先落地方向包括：
+
+- 监管报送规则发现、预审核与跨指标影响分析；
+- 授信审查中的企业、实控人、关联公司、司法和舆情关系；
+- 反洗钱中的账户、交易、设备、地址、商户和受益人网络；
+- 模型、特征、规则、审批和业务结果的全链路治理；
+- 高风险 Agent 的分级授权、人工确认、停止和补偿回滚。
+
+### Context Graph 在金融中的价值
+
+Context Graph 不仅记录客户和交易关系，还记录风险状态变化、规则触发、整改流程和行动上下文，使 Agent 能够从“发现异常”继续推进到“判断影响、解释依据和建议处置”。
+
+参考：[Agentic GraphRAG](https://arxiv.org/abs/2605.18770)、[Context Graphs for Proactive Enterprise Agents](https://arxiv.org/abs/2607.07721)
